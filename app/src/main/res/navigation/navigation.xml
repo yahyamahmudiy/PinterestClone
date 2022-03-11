@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.pinterest.Fragment.Home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_chatsFragment"
+            app:destination="@id/chatsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_homeFragmentAll"
+            app:destination="@id/homeFragmentAll" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.pinterest.Fragment.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/chatsFragment"
+        android:name="com.example.pinterest.Fragment.Chats.ChatsFragment"
+        android:label="fragment_chats"
+        tools:layout="@layout/fragment_chats" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.pinterest.Fragment.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/homeFragmentAll"
+        android:name="com.example.pinterest.Fragment.Home.HomeFragmentAll"
+        android:label="fragment_home_all"
+        tools:layout="@layout/fragment_home_all" >
+        <action
+            android:id="@+id/action_homeFragmentAll_to_homeFragmentForYou"
+            app:destination="@id/homeFragmentForYou" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragmentForYou"
+        android:name="com.example.pinterest.Fragment.Home.HomeFragmentForYou"
+        android:label="fragment_home_for_you"
+        tools:layout="@layout/fragment_home_for_you" >
+        <action
+            android:id="@+id/action_homeFragmentForYou_to_homeFragmentNature"
+            app:destination="@id/homeFragmentNature" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragmentNature"
+        android:name="com.example.pinterest.Fragment.Home.HomeFragmentNature"
+        android:label="fragment_home_nature"
+        tools:layout="@layout/fragment_home_nature" >
+        <action
+            android:id="@+id/action_homeFragmentNature_to_homeFragmentAnimals"
+            app:destination="@id/homeFragmentAnimals" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragmentAnimals"
+        android:name="com.example.pinterest.Fragment.Home.HomeFragmentAnimals"
+        android:label="fragment_home_animals"
+        tools:layout="@layout/fragment_home_animals" />
+</navigation>

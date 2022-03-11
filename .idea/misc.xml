@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/circle_shape_white.xml" value="0.2703125" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/ic_add.xml" value="0.2703125" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/ic_camera.xml" value="0.23055555555555557" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/ic_chat.xml" value="0.15185185185185185" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/ic_chats.xml" value="0.1787037037037037" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/ic_download.xml" value="0.2703125" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/ic_home.xml" value="0.15555555555555556" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/ic_more.xml" value="0.21944444444444444" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/ic_more_white.xml" value="0.2703125" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/ic_person.xml" value="0.15185185185185185" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/ic_search.xml" value="0.15555555555555556" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/ic_searchs.xml" value="0.1787037037037037" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/ic_share.xml" value="0.2703125" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/ic_tune.xml" value="0.2703125" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/item_selector.xml" value="0.15185185185185185" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/round_corner.xml" value="0.15185185185185185" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/round_shape_black.xml" value="0.21944444444444444" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/round_shape_gray.xml" value="0.23055555555555557" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/round_shape_grays.xml" value="0.2703125" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/round_shape_red.xml" value="0.2703125" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/round_shape_transparent.xml" value="0.23055555555555557" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/shape_layout_top_corner.xml" value="0.2703125" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/shape_layout_white.xml" value="0.2703125" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/activity_main.xml" value="0.1721014492753623" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/fragment_chats.xml" value="0.2" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/fragment_chats_message.xml" value="0.2" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/fragment_chats_update.xml" value="0.24365942028985507" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/fragment_detail.xml" value="0.176" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/fragment_home_all.xml" value="0.2210144927536232" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/fragment_home_animals.xml" value="0.2210144927536232" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/fragment_home_for_you.xml" value="0.2210144927536232" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/fragment_home_nature.xml" value="0.2210144927536232" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/fragment_profile.xml" value="0.21422101449275363" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/fragment_search.xml" value="0.264" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/item_home_one.xml" value="0.2210144927536232" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/item_layout_home.xml" value="0.23958333333333334" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/item_layout_search.xml" value="0.26126126126126126" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/item_layout_two.xml" value="0.264" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/progressbar.xml" value="0.23958333333333334" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/menu/item_menu.xml" value="0.176" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/mipmap-anydpi-v26/ic_edit.xml" value="0.2703125" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
