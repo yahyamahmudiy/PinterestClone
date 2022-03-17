@@ -41,7 +41,7 @@ class HomeTwoAdapter(var items:ArrayList<ResponseItem>): RecyclerView.Adapter<Re
             }
 
             Glide.with(holder.itemView.context)
-                .load(home.urls?.thumb)
+                .load(home.urls?.small)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .error(R.drawable.pinterest)
                 .placeholder(R.drawable.pinterest)

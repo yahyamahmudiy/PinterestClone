@@ -1,6 +1,7 @@
 package com.example.pinterest.Networking
 
 import dev.matyaqubov.pinterest.service.model.Search
+import dev.matyaqubov.pinterest.service.model.SearchResultsItem
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -15,7 +16,7 @@ interface HomeService {
     fun listPhotos(): Call<ArrayList<ResponseItem>>
 
     @GET("photos")
-    fun getPhotos(@Query("page") page: Int, @Query("per_page") per_page: Int = 20): Call<ArrayList<ResponseItem>>
+    fun getPhotos(@Query("page") page: Int, @Query("per_page") per_page: Int = 20): Call<ArrayList<Search>>
 
     @GET("topics/nature/photos")
     fun listPhotosNature():Call<ArrayList<ResponseItem>>
@@ -33,7 +34,11 @@ interface HomeService {
         @Query("per_page") per_page: Int = 20
     ): Call<Search>
 
-    @DELETE("photos/{id}")
-    fun deletePhotos(@Path("id")id:Int):Call<ResponseItem>
+    @GET("topics")
+    fun getTopics(): Call<TopicItem>
+
+
+    @GET("photos/{id}")
+    fun getPhoto(@Path("id") id: String): Call<SearchResultsItem>
 
 }

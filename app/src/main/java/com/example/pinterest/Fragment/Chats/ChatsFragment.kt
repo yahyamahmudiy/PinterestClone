@@ -11,7 +11,6 @@ import com.example.pinterest.Adapter.ChatAdapter
 import com.example.pinterest.R
 import com.google.android.material.tabs.TabLayout
 
-
 class ChatsFragment : Fragment() {
     private lateinit var viewPager2: ViewPager2
     private lateinit var chatAdapter: ChatAdapter
@@ -31,7 +30,7 @@ class ChatsFragment : Fragment() {
     }
 
     fun initViews(view: View){
-        var icon = view.findViewById<ImageView>(R.id.icon)
+        val icon = view.findViewById<ImageView>(R.id.icon)
 
         viewPager2 = view.findViewById(R.id.viewPager)
         tabLayout = view.findViewById(R.id.tab_layout)

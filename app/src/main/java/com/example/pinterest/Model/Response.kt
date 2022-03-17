@@ -310,3 +310,26 @@ data class Sponsorship(
 	@field:SerializedName("impression_urls")
 	val impressionUrls: List<String?>? = null
 )
+data class TopicItem(
+	var isSelected: Boolean =false,
+
+	@field:SerializedName("total_photos")
+	val totalPhotos: Int? = null,
+
+	@field:SerializedName("description")
+	val description: String? = null,
+
+	@field:SerializedName("title")
+	val title: String? = null,
+
+	@field:SerializedName("links")
+	val links: Links? = null,
+
+	@field:SerializedName("id")
+	val id: String? = null,
+
+
+	@field:SerializedName("slug")
+	val slug: String? = null,
+
+	)

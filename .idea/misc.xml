@@ -27,10 +27,11 @@
         <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/shape_layout_top_corner.xml" value="0.2703125" />
         <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/drawable/shape_layout_white.xml" value="0.2703125" />
         <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/activity_main.xml" value="0.1721014492753623" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/activity_splash.xml" value="0.264" />
         <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/fragment_chats.xml" value="0.2" />
         <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/fragment_chats_message.xml" value="0.2" />
         <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/fragment_chats_update.xml" value="0.24365942028985507" />
-        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/fragment_detail.xml" value="0.176" />
+        <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/fragment_detail.xml" value="0.264" />
         <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/fragment_home_all.xml" value="0.2210144927536232" />
         <entry key="..\:/PDP/Android BootCamp/Android Studio Projects/Pinterest/app/src/main/res/layout/fragment_home_animals.xml" value="0.2210144927536232" />

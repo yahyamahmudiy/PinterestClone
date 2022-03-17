@@ -1,6 +1,7 @@
 package com.example.pinterest.Fragment.Home
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -12,23 +13,30 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.pinterest.Adapter.HomeTwoAdapter
+import com.example.pinterest.Adapter.SearchPhotosAdapter
+import com.example.pinterest.Fragment.DetailFragment
+import com.example.pinterest.Fragment.SearchFragment
 import com.example.pinterest.Helper.EndlessRecyclerViewScrollListener
 import com.example.pinterest.Helper.ProgressDialog
 import com.example.pinterest.Helper.SpaceItemDecoration
 import com.example.pinterest.Networking.ResponseItem
 import com.example.pinterest.Networking.RetrofitHttp
 import com.example.pinterest.R
+import dev.matyaqubov.pinterest.service.model.Search
+import dev.matyaqubov.pinterest.service.model.SearchResultsItem
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class HomeFragmentAll : Fragment() {
-    private var photos = ArrayList<ResponseItem>()
+    private var photos = ArrayList<SearchResultsItem>()
     private var recyclerView: RecyclerView? = null
-    lateinit var homeTwoAdapter:HomeTwoAdapter
-    var page = 0
+    var page = 1
+    private var word: String = ""
     private lateinit var manager: StaggeredGridLayoutManager
     lateinit var swipeRefreshLayout:SwipeRefreshLayout
+    lateinit var adapter: SearchPhotosAdapter
+    var sendData: SearchFragment.SendData? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,48 +47,58 @@ class HomeFragmentAll : Fragment() {
 
         recyclerView = view.findViewById<View>(R.id.recyclerView) as RecyclerView
         manager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        val decoration = SpaceItemDecoration(10)
+        recyclerView?.addItemDecoration(decoration)
+
+
         recyclerView!!.layoutManager = manager
 
-        refreshAdapter(photos)
-        apiPosterListRetrofit()
+        word = "random"
 
+        refreshAdapter(photos)
+        apiPosterListRetrofit(word)
 
         swipeRefreshLayout = view.findViewById(R.id.swipeRefresh2)
         swipeRefreshLayout.setOnRefreshListener {
             swipeRefreshLayout.isRefreshing = false
-//            apiPosterListRetrofit()
             photos.clear()
-            apiPosterListRetrofit()
-//            refreshAdapter(photos)
+            apiPosterListRetrofit(word)
+
         }
 
-        val decoration = SpaceItemDecoration(10)
-        recyclerView?.addItemDecoration(decoration)
+
 
         val scrollListener=object : EndlessRecyclerViewScrollListener(manager){
             override fun onLoadMore(page: Int, totalItemsCount: Int, view: RecyclerView?) {
-                apiPosterListRetrofit()
+                apiPosterListRetrofit(word)
             }
 
         }
         recyclerView!!.addOnScrollListener(scrollListener)
 
+        adapter.photoItemClick={
+            sendData?.sendPhoto(it,word,page)
+        }
+
         return view
     }
 
-    fun apiPosterListRetrofit(){
+    fun apiPosterListRetrofit(word:String){
         ProgressDialog.showProgress(requireContext())
-        RetrofitHttp.posterService.getPhotos(getPage()).enqueue(object : Callback<ArrayList<ResponseItem>> {
+        RetrofitHttp.posterService.getSearchResult(word,getPage()).enqueue(object : Callback<Search> {
             @SuppressLint("NotifyDataSetChanged")
-            override fun onResponse(call: Call<ArrayList<ResponseItem>>, response: Response<ArrayList<ResponseItem>>) {
-                //photos.clear()
+            override fun onResponse(call: Call<Search>, response: Response<Search>) {
                 swipeRefreshLayout.isRefreshing = false
-                photos.addAll(response.body()!!)
-                homeTwoAdapter.notifyDataSetChanged()
+                if (!response.body()!!.results.isNullOrEmpty()){
+                    photos.addAll(response.body()!!.results!!)
+                    adapter.notifyDataSetChanged()
+                } else {
+                    Toast.makeText(requireContext(), "The End", Toast.LENGTH_SHORT).show()
+                }
                 ProgressDialog.dismissProgress()
             }
 
-            override fun onFailure(call: Call<ArrayList<ResponseItem>>, t: Throwable) {
+            override fun onFailure(call: Call<Search>, t: Throwable) {
                 Log.d("@@@",t.message.toString())
                 Toast.makeText(requireContext(), "No Internet Connection!", Toast.LENGTH_SHORT).show()
             }
@@ -93,9 +111,23 @@ class HomeFragmentAll : Fragment() {
         return  ++page
     }
 
-   fun refreshAdapter(photos: ArrayList<ResponseItem>){
-     homeTwoAdapter = HomeTwoAdapter(photos)
-     recyclerView?.adapter = homeTwoAdapter
-   }
+    fun refreshAdapter(photos: ArrayList<SearchResultsItem>){
+       adapter = SearchPhotosAdapter(photos)
+       recyclerView?.adapter = adapter
+    }
+
+    override fun onAttach(activity: Activity) {
+        super.onAttach(activity)
+        try {
+            sendData = activity as SearchFragment.SendData
+        } catch (e: Exception) {
+            Toast.makeText(requireContext(), " must implement", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onDetach() {
+        sendData = null
+        super.onDetach()
+    }
 
 }

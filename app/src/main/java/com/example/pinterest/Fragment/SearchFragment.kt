@@ -1,6 +1,7 @@
 package com.example.pinterest.Fragment
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -50,6 +51,7 @@ class SearchFragment : Fragment() {
     lateinit var adapter: SearchPhotosAdapter
     private lateinit var manager: StaggeredGridLayoutManager
     var page = 1
+    var sendData: SendData? = null
     private var word: String = ""
     private var recyclerViewOne: RecyclerView? = null
     private var recyclerViewTwo: RecyclerView? = null
@@ -155,6 +157,11 @@ class SearchFragment : Fragment() {
             nestedScrollView.visibility = View.VISIBLE
         }
 
+        adapter.photoItemClick = {
+
+            sendData!!.sendPhoto(it,word,page)
+        }
+
     }
 
     private fun searchPhoto(word: String) {
@@ -176,6 +183,22 @@ class SearchFragment : Fragment() {
 
     }
 
+
+
+    override fun onAttach(activity: Activity) {
+        super.onAttach(activity)
+        try {
+            sendData = activity as SendData
+        } catch (e: Exception) {
+            Toast.makeText(requireContext(), " must implement", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onDetach() {
+        sendData = null
+        super.onDetach()
+    }
+
     private fun refreshAdapter(list: ArrayList<SearchResultsItem>) {
         adapter = SearchPhotosAdapter(list)
         recyclerView!!.adapter = adapter
@@ -193,6 +216,10 @@ class SearchFragment : Fragment() {
     @JvmName("getPage1")
     private fun getPage(): Int {
         return ++page
+    }
+
+    interface SendData {
+        fun sendPhoto(photo:SearchResultsItem,word: String,page:Int)
     }
 
 }
