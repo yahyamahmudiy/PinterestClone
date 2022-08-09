@@ -24,7 +24,6 @@
             android:name=".Activity.MainActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing">
-
         </activity>
     </application>
 

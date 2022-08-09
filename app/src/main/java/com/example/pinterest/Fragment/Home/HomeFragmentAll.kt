@@ -60,13 +60,10 @@ class HomeFragmentAll : Fragment() {
 
         swipeRefreshLayout = view.findViewById(R.id.swipeRefresh2)
         swipeRefreshLayout.setOnRefreshListener {
-            swipeRefreshLayout.isRefreshing = false
             photos.clear()
             apiPosterListRetrofit(word)
 
         }
-
-
 
         val scrollListener=object : EndlessRecyclerViewScrollListener(manager){
             override fun onLoadMore(page: Int, totalItemsCount: Int, view: RecyclerView?) {
@@ -88,6 +85,7 @@ class HomeFragmentAll : Fragment() {
         RetrofitHttp.posterService.getSearchResult(word,getPage()).enqueue(object : Callback<Search> {
             @SuppressLint("NotifyDataSetChanged")
             override fun onResponse(call: Call<Search>, response: Response<Search>) {
+                ProgressDialog.dismissProgress()
                 swipeRefreshLayout.isRefreshing = false
                 if (!response.body()!!.results.isNullOrEmpty()){
                     photos.addAll(response.body()!!.results!!)
@@ -95,10 +93,11 @@ class HomeFragmentAll : Fragment() {
                 } else {
                     Toast.makeText(requireContext(), "The End", Toast.LENGTH_SHORT).show()
                 }
-                ProgressDialog.dismissProgress()
+
             }
 
             override fun onFailure(call: Call<Search>, t: Throwable) {
+                ProgressDialog.dismissProgress()
                 Log.d("@@@",t.message.toString())
                 Toast.makeText(requireContext(), "No Internet Connection!", Toast.LENGTH_SHORT).show()
             }

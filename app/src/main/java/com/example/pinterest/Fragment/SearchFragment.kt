@@ -168,10 +168,11 @@ class SearchFragment : Fragment() {
         ProgressDialog.showProgress(requireContext())
         RetrofitHttp.posterService.getSearchResult(word,getPage()).enqueue(object : Callback<Search> {
                 override fun onResponse(call: Call<Search>, response: Response<Search>) {
+                    ProgressDialog.dismissProgress()
                     list.addAll(response.body()!!.results!!)
                     Log.d("requessssst", "onResponse: ${response.body()!!.results!!}")
                     adapter.notifyDataSetChanged()
-                    ProgressDialog.dismissProgress()
+
                 }
 
                 override fun onFailure(call: Call<Search>, t: Throwable) {
